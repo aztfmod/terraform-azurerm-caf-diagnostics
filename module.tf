@@ -9,7 +9,7 @@
    eventhub_authorization_rule_id   = "${var.diagnostics_map.eh_id}/authorizationrules/RootManageSharedAccessKey"
    
    log_analytics_workspace_id       = var.log_analytics_workspace_id
-   log_analytics_destination_type   = "Dedicated"
+   log_analytics_destination_type   = lookup(var.diag_object, "log_analytics_destination_type", null)
 
    storage_account_id               = var.diagnostics_map.diags_sa
    

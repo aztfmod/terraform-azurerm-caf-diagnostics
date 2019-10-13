@@ -6,8 +6,9 @@ Deploys the diagnostics settings for an already existing Azure resource
 Reference the module to a specific version (recommended):
 ```hcl
 module "diagnostics" {
-    source                  = "git://github.com/aztfmod/diagnostics.git?ref=v0.1"
-  
+    source  = "aztfmod/caf-diagnostics/azurerm"
+    version = "0.1.0"
+
     name                              = var.name
     resource_id                       = var.resource_id
     diag_object                       = var.diag_object
