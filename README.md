@@ -113,7 +113,7 @@ Example
          ]
      metric = [
                  #["Category name",  "Diagnostics Enabled(true/false)", "Retention Enabled(true/false)", Retention_period],
-                 ["AllMetrics", 60, True],
+                 ["AllMetrics", true, true, 60],
      ]
  }
 ```
