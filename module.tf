@@ -6,7 +6,7 @@
    target_resource_id               = var.resource_id
    
    eventhub_name                    = lookup(var.diagnostics_map, "eh_name", null)
-   eventhub_authorization_rule_id   = lookup(var.diagnostics_map, "eh_name", false) ? "${var.diagnostics_map.eh_id}/authorizationrules/RootManageSharedAccessKey" : null
+   eventhub_authorization_rule_id   = lookup(var.diagnostics_map, "eh_id", null) != null ? "${var.diagnostics_map.eh_id}/authorizationrules/RootManageSharedAccessKey" : null
    
    log_analytics_workspace_id       = var.log_analytics_workspace_id
    log_analytics_destination_type   = lookup(var.diag_object, "log_analytics_destination_type", null)
