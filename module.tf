@@ -5,8 +5,8 @@
    name                             = "${var.name}-diag"
    target_resource_id               = var.resource_id
    
-   eventhub_name                    = var.diagnostics_map.eh_name
-   eventhub_authorization_rule_id   = "${var.diagnostics_map.eh_id}/authorizationrules/RootManageSharedAccessKey"
+   eventhub_name                    = lookup(var.diagnostics_map, "eh_name", null)
+   eventhub_authorization_rule_id   = lookup(var.diagnostics_map, "eh_name", false) ? "${var.diagnostics_map.eh_id}/authorizationrules/RootManageSharedAccessKey" : null
    
    log_analytics_workspace_id       = var.log_analytics_workspace_id
    log_analytics_destination_type   = lookup(var.diag_object, "log_analytics_destination_type", null)

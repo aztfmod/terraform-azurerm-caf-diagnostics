@@ -82,6 +82,7 @@ Example
 ```hcl
   diagnostics_map = {
       diags_sa      = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/arnaud-hub-operations/providers/Microsoft.Storage/storageAccounts/opslogskumowxv"
+      #Event Hub is optional 
       eh_id         = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/arnaud-hub-operations/providers/Microsoft.EventHub/namespaces/opslogskumowxv"
       eh_name       = "opslogskumowxv"
   }
