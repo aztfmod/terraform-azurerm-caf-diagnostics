@@ -110,5 +110,5 @@ Example
 | Name | Type | Description | 
 | -- | -- | -- | 
 | object | object | Returns the created diagnostics object |
-| names | string | Returns the name created diagnostics object |
-| ids | string | Returns the ID the created diagnostics object | 
+| name | string | Returns the name created diagnostics object |
+| id | string | Returns the ID the created diagnostics object | 
