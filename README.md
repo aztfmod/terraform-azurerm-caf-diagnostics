@@ -7,21 +7,8 @@ Reference the module to a specific version (recommended):
 ```hcl
 module "diagnostics" {
     source  = "aztfmod/caf-diagnostics/azurerm"
-    version = "0.1.0"
+    version = "0.x.y"
 
-    name                              = var.name
-    resource_id                       = var.resource_id
-    diag_object                       = var.diag_object
-    diagnostics_map                   = var.diagsmap
-    log_analytics_workspace_id        = var.laworkspaceid
-}
-```
-
-Or get the latest version
-```hcl
-module "diagnostics" {
-    source                  = "git://github.com/aztfmod/diagnostics.git?ref=latest"
-  
     name                              = var.name
     resource_id                       = var.resource_id
     diag_object                       = var.diag_object
@@ -82,6 +69,7 @@ Example
 ```hcl
   diagnostics_map = {
       diags_sa      = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/arnaud-hub-operations/providers/Microsoft.Storage/storageAccounts/opslogskumowxv"
+      #Event Hub is optional 
       eh_id         = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/arnaud-hub-operations/providers/Microsoft.EventHub/namespaces/opslogskumowxv"
       eh_name       = "opslogskumowxv"
   }
@@ -119,29 +107,8 @@ Example
 ```
 
 # Outputs
-## object
-Outputs the created diagnostics object: 
-```hcl
-output "object" {
-  value = azurerm_monitor_diagnostic_setting.diagnostics
-}
-
-```
-
-## name
-Outputs the name created diagnostics object: 
-```hcl
-output "name" {
-  value = azurerm_monitor_diagnostic_setting.diagnostics.name
-}
-
-```
-
-## id
-Outputs the created diagnostics object: 
-```hcl
-output "id" {
-  value = azurerm_monitor_diagnostic_setting.diagnostics.id
-}
-
-```
+| Name | Type | Description | 
+| -- | -- | -- | 
+| object | object | Returns the created diagnostics object |
+| name | string | Returns the name created diagnostics object |
+| id | string | Returns the ID the created diagnostics object | 
