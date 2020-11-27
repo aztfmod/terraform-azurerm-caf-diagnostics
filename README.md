@@ -1,3 +1,20 @@
+# **READ ME**
+
+Thanks for your interest in Cloud Adoption Framework for Azure landing zones on Terraform.
+This module is now deprecated and no longer maintained. 
+
+As part of Cloud Adoption Framework landing zones for Terraform, we have migrated to a single module model, which you can find here: https://github.com/aztfmod/terraform-azurerm-caf and on the Terraform registry: https://registry.terraform.io/modules/aztfmod/caf/azurerm 
+
+In Terraform 0.13 you can now call directly submodules easily with the following syntax:
+```hcl
+module "caf_diagnostics" {
+  source  = "aztfmod/caf/azurerm//modules/diagnostics"
+  version = "0.4.18"
+  # insert the 4 required variables here
+}
+```
+
+
 [![Build status](https://dev.azure.com/azure-terraform/Blueprints/_apis/build/status/modules/diagnostics)](https://dev.azure.com/azure-terraform/Blueprints/_build/latest?definitionId=0)
 # Deploys diagnostics settings for an Azure resource
 Deploys the diagnostics settings for an already existing Azure resource
